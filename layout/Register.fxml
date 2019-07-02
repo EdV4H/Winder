@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Winder.register.RegisterController">
+   <children>
+      <Label alignment="CENTER" prefHeight="46.0" prefWidth="300.0" text="Registration">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img_icon" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/img_no_image.gif" />
+         </image>
+         <VBox.margin>
+            <Insets left="75.0" right="75.0" />
+         </VBox.margin>
+      </ImageView>
+      <Button fx:id="button_select_photo" mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Select Photo" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="90.0" right="90.0" top="5.0" />
+         </VBox.margin>
+      </Button>
+      <Label prefHeight="16.0" prefWidth="200.0" text="User Name">
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="25.0" prefWidth="300.0">
+         <children>
+            <TextField fx:id="entry_first_name" prefHeight="26.0" prefWidth="125.0">
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="entry_last_name" prefHeight="26.0" prefWidth="125.0" />
+         </children>
+      </HBox>
+      <Label prefHeight="16.0" prefWidth="200.0" text="Birth Day">
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="33.0" prefWidth="300.0">
+         <children>
+            <ChoiceBox fx:id="choice_year" prefHeight="26.0" prefWidth="216.0">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="choice_month" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="choice_day" onMouseClicked="#setDays" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <Label prefHeight="16.0" prefWidth="200.0" text="Comment">
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="entry_comment" prefHeight="26.0" prefWidth="120.0">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Button fx:id="button_register" mnemonicParsing="false" onMouseClicked="#Registration" prefHeight="40.0" prefWidth="180.0" text="Register">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="60.0" top="20.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

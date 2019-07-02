@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="273.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/img_no_image.gif" />
+         </image>
+         <VBox.margin>
+            <Insets left="15.0" top="10.0" />
+         </VBox.margin></ImageView>
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Name" textAlignment="CENTER">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="YYYY/MM/DD" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Comment" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" text="Like">
+               <HBox.margin>
+                  <Insets left="70.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" text="Dislike">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

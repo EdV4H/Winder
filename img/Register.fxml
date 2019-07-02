@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" prefHeight="46.0" prefWidth="300.0" text="Registration">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img_no_image.gif" />
+         </image>
+         <VBox.margin>
+            <Insets left="75.0" right="75.0" />
+         </VBox.margin>
+      </ImageView>
+      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="120.0" text="Select Photo" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="90.0" right="90.0" top="5.0" />
+         </VBox.margin>
+      </Button>
+      <Label prefHeight="16.0" prefWidth="200.0" text="User Name">
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <TextField>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Label prefHeight="16.0" prefWidth="200.0" text="Birth Day">
+         <VBox.margin>
+            <Insets bottom="5.0" left="20.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="33.0" prefWidth="300.0">
+         <children>
+            <ChoiceBox prefHeight="26.0" prefWidth="216.0">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <ChoiceBox prefWidth="150.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <ChoiceBox prefWidth="150.0">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Register">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="60.0" top="5.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

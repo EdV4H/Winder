@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Winder.main.MainController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="170.0" style="-fx-background-color: 0x000;">
+         <children>
+            <Label alignment="CENTER" prefHeight="56.0" prefWidth="170.0" text="Main Menu" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_search" mnemonicParsing="false" prefHeight="101.0" prefWidth="150.0" text="Search !">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_message" mnemonicParsing="false" onMouseClicked="#OpenChat" prefHeight="47.0" prefWidth="150.0" text="Message">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="button_edit" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Edit Profile">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="button_register" mnemonicParsing="false" onMouseClicked="#Registration" prefHeight="30.0" prefWidth="150.0" text="Register">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="button_setting" mnemonicParsing="false" onMouseClicked="#Registration" prefHeight="30.0" prefWidth="150.0" text="Setting">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="button_exit" mnemonicParsing="false" onMouseClicked="#Exit" prefHeight="30.0" prefWidth="150.0" text="Exit">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="400.0" prefWidth="430.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="430.0" text="User Information" textAlignment="CENTER">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img_icon" fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/img_no_image.gif" />
+               </image>
+            </ImageView>
+            <VBox layoutX="181.0" layoutY="61.0" prefHeight="150.0" prefWidth="235.0">
+               <children>
+                  <Label fx:id="label_name" prefHeight="75.0" prefWidth="235.0" text="User Name" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_birth" prefHeight="23.0" prefWidth="235.0" text="YYYY / MM / DD" textAlignment="CENTER">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_comment" prefHeight="50.0" prefWidth="430.0" text="Comment" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <TextArea fx:id="entry_log" editable="false" layoutX="14.0" layoutY="225.0" prefHeight="160.0" prefWidth="405.0" promptText="log" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
