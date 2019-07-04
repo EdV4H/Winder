@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Winder.winderconfig.ConfigController">
+   <children>
+      <HBox prefHeight="22.0" prefWidth="400.0">
+         <children>
+            <Label prefHeight="21.0" prefWidth="98.0" text="IP Address">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="entry_address" prefHeight="26.0" prefWidth="285.0" promptText="Value" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="22.0" prefWidth="400.0">
+         <children>
+            <Label prefHeight="21.0" prefWidth="98.0" text="Login ID">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="entry_id" prefHeight="26.0" prefWidth="285.0" promptText="Value" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="22.0" prefWidth="400.0">
+         <children>
+            <Label prefHeight="21.0" prefWidth="98.0" text="Config">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="26.0" prefWidth="285.0" promptText="Value" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="22.0" prefWidth="400.0">
+         <children>
+            <Label prefHeight="21.0" prefWidth="98.0" text="Config">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField prefHeight="26.0" prefWidth="285.0" promptText="Value" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="button_confirm" mnemonicParsing="false" onMouseClicked="#Confirm" text="Confirm">
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

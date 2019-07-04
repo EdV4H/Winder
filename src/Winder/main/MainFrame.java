@@ -15,11 +15,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import Winder.communicaton.MesgRecv;
-import Winder.windertalking.ChatController;
 
 public class MainFrame extends Application {
     private Stage stage;
-
+    private String address;
+    
+    public static int id;
     public static MainController mainController;
     
     private Socket socket = null;
@@ -48,8 +49,36 @@ public class MainFrame extends Application {
         stage.show();
 
         try {
+            File file = new File("dat/userdata.dat");
+            BufferedReader br = new BufferedReader(new FileReader(file));
 
-            socket = new Socket("localhost", 10000);
+            id = Integer.parseInt(br.readLine());
+
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            File file = new File("dat/configure.dat");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+
+            address = br.readLine();
+
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+
+            socket = new Socket(address, 10000);
 
         } catch (UnknownHostException e) {
             e.printStackTrace();

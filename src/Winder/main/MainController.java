@@ -2,14 +2,18 @@ package Winder.main;
 
 import Winder.windertalking.ChatFrame;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import Winder.register.RegisterFrame;
+import Winder.winderconfig.ConfigFrame;
+import Winder.windersearch.SearchFrame;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -59,13 +63,38 @@ public class MainController {
 
     @FXML
     private void initialize () {
+        try {
+            File file = new File("dat/userdata.dat");
+            BufferedReader br = new BufferedReader(new FileReader(file));
 
+            MainFrame.id = Integer.parseInt(br.readLine());
+
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CheckMessage();
+    }
+
+    @FXML
+    private void OpenSearch (MouseEvent e) {
+        PrintLog("[MainController] Open search window");
+        SearchFrame searchFrame = new SearchFrame(this.stage);
     }
 
     @FXML
     private void OpenChat (MouseEvent e) {
         PrintLog("[MainController] Open chat window");
         ChatFrame chatFrame = new ChatFrame(this.stage);
+    } 
+
+    @FXML
+    private void OpenConfig (MouseEvent e) {
+        PrintLog("[MainController] Open chat window");
+        ConfigFrame configFrame = new ConfigFrame(this.stage);
     } 
 
     @FXML
@@ -99,7 +128,7 @@ public class MainController {
     public void StartNewChat (int id, String name) {
         MainFrame.mainController.PrintLog("[ChatController] Start New Chat");
         try {
-            File file = new File("dat/chat/" + String.valueOf(id) + ".ct");
+            File file = new File("dat/chat" + MainFrame.id + "/" + String.valueOf(id) + ".ct");
             file.createNewFile();
             
             FileWriter fw = new FileWriter(file);
@@ -115,7 +144,7 @@ public class MainController {
         }
 
         try {
-            File file = new File("dat/chat/chatlist.dat");
+            File file = new File("dat/chat" + MainFrame.id + "/chatlist.dat");
             
             FileWriter fw = new FileWriter(file,true);
             PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
@@ -129,6 +158,7 @@ public class MainController {
             e.printStackTrace();
         }
 
+        button_message.setDisable(false);
     }
 
     public void ReceiveMessage (int id, String opponent, String recv_msg) {
@@ -139,7 +169,7 @@ public class MainController {
         }
         
         try {
-            File file = new File("dat/chat/" + String.valueOf(id) + ".ct");
+            File file = new File("dat/chat" + MainFrame.id + "/" + String.valueOf(id) + ".ct");
             
             FileWriter fw = new FileWriter(file,true);
             PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
@@ -155,6 +185,22 @@ public class MainController {
 
         if (ChatFrame.chatController != null) {
             ChatFrame.chatController.Reload();
+        }
+    }
+
+    public void CheckMessage () {
+        try {
+            File file = new File ("dat/chat" + MainFrame.id + "/chatlist.dat");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+
+            String str = br.readLine();
+            if (str == null) button_message.setDisable(true);
+
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

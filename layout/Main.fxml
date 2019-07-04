@@ -20,7 +20,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="button_search" mnemonicParsing="false" prefHeight="101.0" prefWidth="150.0" text="Search !">
+            <Button fx:id="button_search" mnemonicParsing="false" onMouseClicked="#OpenSearch" prefHeight="101.0" prefWidth="150.0" text="Search !">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
@@ -43,7 +43,7 @@
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="button_setting" mnemonicParsing="false" onMouseClicked="#Registration" prefHeight="30.0" prefWidth="150.0" text="Setting">
+            <Button fx:id="button_setting" mnemonicParsing="false" onMouseClicked="#OpenConfig" prefHeight="30.0" prefWidth="150.0" text="Setting">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>

@@ -1,26 +1,26 @@
-package Winder.windertalking;
+package Winder.windersearch;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ChatFrame {
+public class SearchFrame {
     private Stage stage;
     private Parent root;
 
-    public static ChatController chatController;
+    public static SearchController searchController;
 
-    public ChatFrame (Stage rootStage) {
+    public SearchFrame (Stage rootStage) {
         try {
             stage = new Stage();
             stage.initOwner(rootStage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/Chat.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/Search.fxml"));
             root = loader.load();
-            chatController = loader.getController();
-            chatController.setStage(stage);
-            stage.setTitle("Search");
+            searchController = loader.getController();
+            searchController.SetStage(stage);
+            stage.setTitle("Chat");
 
             Scene scene = new Scene(root);
             stage.setScene(scene);

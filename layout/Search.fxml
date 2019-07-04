@@ -9,24 +9,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Winder.windersearch.SearchController">
    <children>
-      <ImageView fitHeight="273.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img_user" fitHeight="273.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/img_no_image.gif" />
          </image>
          <VBox.margin>
             <Insets left="15.0" top="10.0" />
          </VBox.margin></ImageView>
-      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Name" textAlignment="CENTER">
+      <Label fx:id="label_name" alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Name" textAlignment="CENTER">
          <font>
-            <Font size="29.0" />
+            <Font size="22.0" />
          </font>
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="YYYY/MM/DD" textAlignment="CENTER">
+      <Label fx:id="label_birth" alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="YYYY/MM/DD" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
@@ -34,9 +34,9 @@
             <Insets top="5.0" />
          </VBox.margin>
       </Label>
-      <Label alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Comment" textAlignment="CENTER">
+      <Label fx:id="label_comment" alignment="CENTER" prefHeight="35.0" prefWidth="301.0" text="User Comment" textAlignment="CENTER">
          <font>
-            <Font size="21.0" />
+            <Font size="18.0" />
          </font>
          <VBox.margin>
             <Insets bottom="20.0" />
@@ -44,12 +44,12 @@
       </Label>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" text="Like">
+            <Button fx:id="button_like" mnemonicParsing="false" onMouseClicked="#Like" prefHeight="65.0" prefWidth="65.0" text="Like">
                <HBox.margin>
                   <Insets left="70.0" right="30.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" text="Dislike">
+            <Button fx:id="button_dislike" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#Dislike" prefHeight="65.0" prefWidth="65.0" text="Dislike">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>

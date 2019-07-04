@@ -43,7 +43,7 @@ public class ChatController {
     @FXML
     void initialize () {
         try {
-            File file = new File("dat/chat/chatlist.dat");
+            File file = new File("dat/chat" + MainFrame.id + "/chatlist.dat");
             BufferedReader br = new BufferedReader(new FileReader(file));
 
             String str = br.readLine();
@@ -68,13 +68,13 @@ public class ChatController {
         if (content == null) return;
         op_info = content.split(":");
         String opponent = op_info[0];
-        String op_name = op_info[1];
+        String op_name = op_info[1].replace("_", " ");
 
         
         label_opponent.setText(op_name);
         text_talk.clear();
         try {
-            File file = new File("dat/chat/" + opponent + ".ct");
+            File file = new File("dat/chat" + MainFrame.id + "/" + opponent + ".ct");
             BufferedReader br = new BufferedReader(new FileReader(file));
 
             String str = br.readLine();
@@ -112,7 +112,7 @@ public class ChatController {
         String op_name = op_info[1];
 
         try {
-            File file = new File("dat/chat/" + opponent + ".ct");
+            File file = new File("dat/chat" + MainFrame.id + "/" + opponent + ".ct");
             FileWriter fw = new FileWriter(file);
             PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 
@@ -132,7 +132,7 @@ public class ChatController {
     public void Reload () {
         text_talk.clear();
         try {
-            File file = new File("dat/chat/" + op_info[0] + ".ct");
+            File file = new File("dat/chat" + MainFrame.id + "/" + op_info[0] + ".ct");
             BufferedReader br = new BufferedReader(new FileReader(file));
 
             String str = br.readLine();

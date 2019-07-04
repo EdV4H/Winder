@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 import Winder.main.MainFrame;
+import Winder.windersearch.SearchFrame;
 import Winder.windertalking.ChatFrame;
 
 public class MesgRecv extends Thread {
@@ -63,6 +64,11 @@ public class MesgRecv extends Thread {
 
                             pw.close();
 
+                            File ct_dir = new File("dat/chat" + String.valueOf(set_id));
+                            ct_dir.mkdir();
+                            File ct_list = new File("dat/chat" + String.valueOf(set_id)+ "/chatlist.dat");
+                            ct_list.createNewFile();
+
                             MainFrame.mainController.PrintLog("[MesgRecv] Set ID : " + String.valueOf(set_id));
                             id = set_id;
                             String msg = "LOGIN " + String.valueOf(id);
@@ -73,6 +79,14 @@ public class MesgRecv extends Thread {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        break;
+
+                        case "SEARCHINFO":
+                        int search_id = Integer.parseInt(inputTokens[1]);
+                        String search_name = inputTokens[2].replace("_", " ");
+                        String search_birth = inputTokens[3].replace("_", " ");
+                        String search_comment = inputTokens[4].replace("_", " ");
+                        SearchFrame.searchController.SetStatus(search_id, search_name, search_birth, search_comment);
                         break;
 
                         case "NEWCHAT":
